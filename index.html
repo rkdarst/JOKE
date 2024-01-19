@@ -15,10 +15,24 @@
     async function xsha256(data) {
     }
     async function publish() {
+	hashes = [ ]
+
 	input = document.getElementById("data")
-	//alert(await sha256(input.value))
-	alert('Your information has been published. Publication id: '
-	      + await sha256(input.value))
+	if (input.value.length > 0) {
+	    hash = await sha256(input.value)
+	    hashes.push(hash)
+	}
+
+	uploads = document.getElementById('upload')
+	for (u of uploads.files) {
+	    console.log(u)
+	    hash = await sha256(u.text)
+	    hashes.push(hash)
+	}
+
+	console.log(hashes)
+	alert('Your information has been published. Publication ids: '
+	+ hashes)
     }
 
   </script>
@@ -44,9 +58,11 @@
     Don't publish anything that is can not be made public.  Data is
     not transferred out of your web browser anyway.
 
-    <p>
+    <h2>Submission</h2>
 
-    <textarea id="data" name="data" rows="25" cols="120"></textarea>
+    <input type="file" id="upload" multiple /><br>
+    Or enter free-from text:<br>
+    <textarea id="data" name="data" rows="10" cols="120"></textarea>
     <br>
     <input type="submit" onclick="publish()" value="Publish">
   </body>
@@ -61,7 +77,6 @@
   <ul>
     <li>Preparation of security evaluation, target submission data 1
     April 2024.</li>
-    <li>File upload support.</li>
   </ul>
 
 </html>
