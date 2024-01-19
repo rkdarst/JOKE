@@ -31,7 +31,9 @@
 	}
 
 	console.log(hashes)
-	alert('Your information has been published. Publication ids: '
+	alert('Your results have been evaluated and accepted for publication!\n\
+\n\
+Publication ids: \n'
 	+ hashes)
     }
 
@@ -46,12 +48,12 @@
 
     JOKE publishes results in all fields of art and science which are
     hindered by internal data security rules.  Primarily, submissions
-    are of data which is required to be classified "confidential"
-    (limiting the use of common scientific tools), but there is no
-    reason for it to be confidential.  Publication in JOKE will allow
-    the data to be classified "public", so that it can be used in
-    online services such as ChatGPT or Github, and sharing with
-    collaborators.
+    are of data which organizational rules require to be classified
+    "confidential" (limiting the use of common scientific tools), but
+    there is no reason for it to be confidential.  Publication in JOKE
+    will allow the data to be classified "public", so that it can be
+    used in online services such as ChatGPT or Github, and sharing
+    with collaborators.
 
     <h2>Publication conditions</h2>
 
@@ -64,13 +66,13 @@
     Or enter free-from text:<br>
     <textarea id="data" name="data" rows="10" cols="120"></textarea>
     <br>
-    <input type="submit" onclick="publish()" value="Publish">
+    <input type="submit" onclick="publish()" value="Submit">
   </body>
 
 
   <h2>How it works / to do</h2>
 
-  JOKE uses javascript to compute a sha256 hash of the uploaded
+  JOKE uses Javascript to compute a sha256 hash of the uploaded
   text/data.  There is no transfer out of the web browser, and no
   outside resources loaded.  Future plans:
 
