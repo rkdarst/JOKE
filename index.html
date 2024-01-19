@@ -30,11 +30,19 @@
 	    hashes.push(hash)
 	}
 
+	magnets = [ ]
+	for (h of hashes) {
+	    magnets.push("magnet:?xt=urn:sha256:"+h)
+	}
+
 	console.log(hashes)
 	alert('Your results have been evaluated and accepted for publication!\n\
 \n\
-Publication ids: \n'
-	+ hashes)
+Publication ids:\n'
+	      + hashes+'\n\
+\n\
+Permanent access URLs:\n'
+	     + magnets)
     }
 
   </script>
